@@ -4,6 +4,7 @@ import { FMPS } from '../FMPS/FMPS';
 import { rootF } from '../FMPS/FMPS_F';
 import { Config } from '..';
 import { Image } from '@koishijs/canvas';
+import { Session }from 'koishi'
 import { pathToFileURL } from 'url'
 import { resolve } from 'path'
 import { } from "@satorijs/adapter-qq";
@@ -44,7 +45,7 @@ export async function active_get(ctx: Context, config: Config) {
         mdswitch = false
     }
 
-    function markdown(session) {
+    function markdown(session: Session) {
         let t2
         mdkey2 ? t2 = {
             key: mdkey2,

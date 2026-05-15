@@ -19,7 +19,9 @@
     "plugin"
   ],
   "peerDependencies": {
-    "koishi": "^4.17.0"
+    "@koishijs/canvas": "^0.2.0",
+    "koishi": "^4.18.11",
+    "koishi-plugin-puppeteer": "^3.9.0"
   },
   "koishi": {
     "description": {
@@ -38,10 +40,14 @@
   },
   "dependencies": {
     "chinese-s2t-pro": "^1.0.2",
+    "typescript": "^6.0.3",
     "zh_cn": "^0.0.7"
   },
   "devDependencies": {
+    "@koishijs/canvas": "^0.2.0",
+    "@satorijs/adapter-qq": "^4.11.0",
     "chinese-s2t-pro": "^1.0.2",
+    "koishi": "^4.18.11",
     "zh_cn": "^0.0.7"
   }
 }
