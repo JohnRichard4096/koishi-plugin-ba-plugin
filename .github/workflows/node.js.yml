@@ -48,13 +48,8 @@ jobs:
     - name: Build
       run: |
         if [ -f tsconfig.json ]; then
-          # npx tsc
-          # 由于目前太多类型错误没有修复，这一步肯定过不了
-          echo "Type checking is skipped."
-        fi
-        if [ -f package.json ]; then
-          npm run build
+          npx tsc
         else
-          echo "No build configuration found"
+          echo "No TypeScript config file found"
           exit 1
         fi

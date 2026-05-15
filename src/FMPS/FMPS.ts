@@ -466,7 +466,15 @@ export class FMPS {
         await refreshToken.bind(this)(bot);
         const payload = new FormData();
         payload.append('msg_id', '0');
-        payload.append('file_image', new Blob([data], { type: 'image/png' }), 'image.jpg');
+        const arrayBuffer: ArrayBuffer = (data.buffer as ArrayBuffer).slice(
+          data.byteOffset,
+          data.byteOffset + data.byteLength,
+        );
+        payload.append(
+          "file_image",
+          new Blob([arrayBuffer], { type: "image/png" }),
+          "image.jpg",
+        );
         await this.ctx.http.post(`https://api.sgroup.qq.com/channels/${bot.channelId}/messages`, payload, {
             headers: {
                 Authorization: `QQBot ${bot['token']}`,
